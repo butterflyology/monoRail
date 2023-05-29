@@ -135,9 +135,15 @@ train_data <- data.frame(Time = rep(1:simulation_time, num_trains),
                              (track_length / num_stations) - (train$position %% (track_length / num_stations))
                            }
                          }))
-ggplot(train_data, aes(x = Time, y = Position, group = Train)) +
+
+
+# Visualize the position of the train in space and time
+train_data %>%
+  filter(Train == 2) %>%
+ggplot(aes(x = Time, y = Position)) +
   geom_line() +
   xlab("Time") +
   ylab("Train Position (Distance)") +
   scale_y_continuous(labels = function(x) paste(x, "m"))  # Adding distance unit to y-axis labels
 
+# I'm not sure this actually works. The position (y-axis) seems off.
