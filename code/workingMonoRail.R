@@ -4,7 +4,7 @@ library(R6)
 
 # Define the monorail system parameters
 num_trains <- 3
-num_stations <- 4
+num_stations <- 2
 track_length <- 1000
 max_capacity <- 100
 simulation_time <- 50
