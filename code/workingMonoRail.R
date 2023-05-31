@@ -123,7 +123,9 @@ for (t in 1:simulation_time) {
 
 # Calculate total passengers moved
 total_passengers_moved <- sum(sapply(trains, function(train) train$passengers_moved))
-cat("Total passengers moved:", total_passengers_moved, "\n")
+cat("Total passengers moved:", total_passengers_moved, "\n") # This might be working. 3 trains move 257 passengers, while 5 trains move 233.
+
+
 
 # Visualization (using ggplot2 for demonstration purposes)
 train_data <- data.frame(Time = rep(1:simulation_time, num_trains),
