@@ -131,6 +131,20 @@ for (t in 1:simulation_time) {
 # Print total passengers moved
 cat("Total passengers moved:", total_passengers_moved, "\n")
 
+
+train_data <- data.frame(
+  Time = rep(1:simulation_time, num_trains),
+  Train = rep(1:num_trains, each = simulation_time),
+  Position = sapply(trains, function(train) {
+    if (train$direction == 1) {
+      train$position %% (track_length / num_stations)
+    } else {
+      (track_length / num_stations) - (train$position %% (track_length / num_stations))
+    }
+    Passengers = sapply(trains, function(train) train$passengers_moved)[1] # This isn't right
+  }))
+train_data
+
 # Visualization (using ggplot2 for demonstration purposes)
 ggplot(train_data, aes(x = Time, y = Position, group = Train)) +
   geom_line() +

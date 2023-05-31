@@ -18,4 +18,6 @@ Important files:
 
 
 Major commits:
-2023-05-23: Initial commit with working simulator.
+1. 2023-05-23: Initial commit with working simulator.
+1. 2023-05-30: Working simulator uploaded to github.
+1. 2023-05-31: Adding comments to explain the intention of each function.
